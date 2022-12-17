@@ -10,7 +10,7 @@ long double s21_exp(double x) {
     result = S21_INF;
   } else {
     long double long_x = s21_fabs(x);
-    while (tailor_mem > PRESISION && n > 1000) {
+    while (tailor_mem > 10e-12 || n < 500) {
       tailor_mem *= (long_x / n);
       result += tailor_mem;
       n++;

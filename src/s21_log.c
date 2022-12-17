@@ -1,7 +1,7 @@
 #include "s21_math.h"
 
 long double s21_log(double x) {
-  long double result = 0, tailor_mem = 1;
+  long double result = 0, temp = 1;
   int exp_pow = 0;
 
   if (x == 0) {
@@ -18,9 +18,9 @@ long double s21_log(double x) {
     for (exp_pow = 0; x >= S21_EXP_VALUE; x /= S21_EXP_VALUE, exp_pow++)
       continue;
 
-    for (int i = 0; (i < 100 && tailor_mem > PRESISION); i++) {
-      tailor_mem = 2 * ((x - s21_exp(tailor_mem)) / (x + s21_exp(tailor_mem)));
-      result += tailor_mem;
+    for (int i = 0; i < 100; i++) {
+      temp = result;
+      result = temp + 2 * ((x - s21_exp(temp)) / (x + s21_exp(temp)));
     }
   }
   return result + exp_pow;

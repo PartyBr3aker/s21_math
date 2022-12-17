@@ -175,7 +175,7 @@ Suite *suite_s21_pow(void) {
   Suite *s = suite_create("s21_pow");
   TCase *tc = tcase_create("s21_pow_tc");
 
-  tcase_add_loop_test(tc, basic_test, -NUM_OF_TESTS, NUM_OF_TESTS);
+  tcase_add_loop_test(tc, basic_test, -10, 10);
   tcase_add_test(tc, basic_test);
   tcase_add_test(tc, base_neg);
   tcase_add_test(tc, all_neg);
