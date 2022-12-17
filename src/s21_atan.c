@@ -26,7 +26,8 @@ long double s21_atan(double x) {
 
   } else {
     long double term = x, tailor_member = 1.0;
-    for (int num = 2; s21_fabs(tailor_member) > PRESISION; num++) {
+    for (int num = 2; (s21_fabs(tailor_member) > PRESISION && num < 1000);
+         num++) {
       term *= (-1) * x * x;
       tailor_member = term / (2 * num - 1.0);
       result += tailor_member;

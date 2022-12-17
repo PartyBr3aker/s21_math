@@ -1,10 +1,7 @@
 #include "s21_math.h"
-#define EPS 1e-6
-
-#include <math.h>
 
 long double s21_pow_fast(double base, int exp) {
-  long double result = 1.0;
+  long double result = 1;
   if ((int)exp >= 0) {
     while (exp) {
       if ((int)exp % 2 == 0) {
