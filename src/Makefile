@@ -21,7 +21,7 @@ gcov_report: ./Test/*.c test_s21_math.c
 	$(CC) -o $(TEST_NAME) $(SRCS) ./Test/*.c test_s21_math.c $(ALL_FLAGS) 
 	./$(TEST_NAME)
 	geninfo *.gcda *.gcno -b . -o check_res 
-	genhtml check_res -o finish
+	genhtml check_res -o report
 
 clean:
-	rm -rf $(OBJS) *.o *.gcno *.gcda *.info *.a $(TEST_NAME)
+	rm -rf $(OBJS) *.o *.gcno *.gcda *.info *.a $(TEST_NAME) report check_res

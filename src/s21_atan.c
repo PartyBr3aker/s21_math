@@ -15,7 +15,7 @@ long double s21_atan(double x) {
   } else if (x == -S21_INF) {
     result = -S21_HALF_PI_VALUE;
 
-  } else if (s21_fabs(x - 1.0) < PRESISION) {
+  } else if (s21_fabs(x - 1.0) < 10e-6) {
     // the derivative of atan(x) = 1 / (1 + х^2)
     // atan(1) = pi/4
     // dy/dx = 1/2 ==> dy = dx/2 ==> dy = (x - 1) / 2
